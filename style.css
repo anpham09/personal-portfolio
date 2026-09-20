@@ -140,3 +140,65 @@ button{
 .desktop-nav a::hover, .desk-top-nav a.active{
     color: var(--text);
 }
+
+.header-actions{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-button, .command-button, .menu-button {
+    height: 42px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface) 75%, transparent);
+    cursor: pointer;
+}
+.icon-button, .menu-button{
+    width: 42px;
+    border-radius: 50%;
+}
+
+.command-button{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px 0 14px;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+.command-button:disable{
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+kbd{
+    min-width: 30px;
+    padding: 3px 6px;
+    border: 1px solid var(--line);
+    border-bottom-color: var(--line-strong);
+    border-radius: 6px;
+    background: var(--surface-2);
+    font-family: var(--font-mono);
+    font-size:0.68rem;
+    text-align: center;
+}
+
+.menu-button{
+    display: none;
+    position: relative;
+}
+.menu-button span{
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 1.5px;
+    background: var(--text);
+}
+.menu-button span:first-child{
+    top: 17px;
+}
+.menu-button span:last-child{
+    top: 23px;
+}
