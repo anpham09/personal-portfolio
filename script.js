@@ -16,3 +16,23 @@ window.Portfolio = window.Portfolio || {};
     });
 })();
 
+(()=>{
+    const items = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if(!entry.isIntersecting) return;
+
+            const delay = Number(entry.target.dataset.delay || 0);
+
+            window.setTimeout(()=>{
+                entry.target.classList.add("visible");
+            },delay);
+            observer.unobserve(entry.target);
+        });
+
+    },
+    {threshold: 0.12});
+    items.forEach((item)=> observer.observe(item));
+})();
+
