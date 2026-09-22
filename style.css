@@ -664,27 +664,6 @@ kbd{
     opacity: 0.15;
 }
 
-.art-genmatrix{
-    background: 
-        radial-gradient(circle at 70% 30%,rgba(201,255,83,0.9) 0 7%,transparent 7.3%),
-        linear-gradient(135deg,#8c82ff,#5144eb 45%,#1a1738);
-        color: white;
-
-}
-
-.pixel-world{
-    position: absolute;
-    inset: 0;
-}
-
-.pixel{
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    display: block;
-    background: rgba(255,255,255,0.86);
-    box-shadow: 46px 0 rgba(255,255,255,0.23), 0 46px rgba(255, 255, 255, 0.14);
-}
 
 .p1{
     left: 14%;
@@ -757,3 +736,11 @@ kbd{
     font-size: 1.2rem;
 }
 
+.art-cyber{
+    background:
+        linear-gradient(rgba(201,255,83,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,255,83,0.06) qpx, transparent 1px),
+        #111713;
+    background-size: 28px 28px;
+    color: #e8ffe0;
+}

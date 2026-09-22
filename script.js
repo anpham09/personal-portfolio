@@ -60,3 +60,64 @@ window.Portfolio = window.Portfolio || {};
     });
     updateProgress();
 })();
+
+(()=> {
+    const filters = document.querySelectorAll(".filter");
+    const counter = document.querySelector("#visible-project-count");
+
+    const updateCount = ()=>{
+        const visibleCards = [
+            ...document.querySelectorAll(".project-card")
+        ].filter((card)=> !card.classList.contains("hidden"));
+
+        if (!counter) return;
+
+        counter.textContent =
+            `${visibleCards.length} ${visibleCards.length === 1 ? "project" : "projects"}`;
+    };
+    filters.forEach((button) => {
+        button.addEventListener("click", () =>{
+            filters.forEach((item) => item.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            document.querySelectorAll(".project-card").forEach((card) =>{
+                const categories = card.dataset.category.split(" ");
+                const shouldShow = filter === "all" || categories.includes(filter);
+                card.classList.toggle("hidden", !shouldShow);
+            });
+            updateCount();
+        });
+    });
+    updateCount();
+
+    window.Portfolio.updateProjectCount = updateCount;
+})();
+
+(() => {
+    const navLinks = document.querySelectorAll(".desktop-nav a");
+
+    const availableSections = [
+        "work","story","experience","recognition","contact"
+    ].map((id)=>document.getElementById(id)).filter(Boolean);
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry)=>{
+                if(!entry.isIntersecting) return;
+
+                navLinks.forEach((link)=>{
+                    const matches = link.getAttribute("href") ===`#${entry.target.id}`;
+                    link.classList.toggle("active", matches);
+                });
+            
+            });
+        },
+        {rootMargin: "-30% 0px -60% 0px"}
+    );
+
+    availableSections.forEach((section)=> observer.observe(section));
+
+    window.Portfolio.updateProjectCount?.();
+})();
