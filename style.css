@@ -746,11 +746,6 @@ kbd{
 }
 
 
-.art-finportly {
-    background: radial-gradient(circle at 82% 18%,rgba(201, 255, 83, 0.55),transparent 9rem),
-        linear-gradient(145deg, #c9ff53, #dff7ca 44%, #9ad9ff);
-    color: #142117;
-}
 
 .finance-ui{
     position: absolute;
