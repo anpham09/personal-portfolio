@@ -821,3 +821,64 @@ kbd{
 .finance-lines i:nth-child(3){
     width: 68%;
 }
+
+.art-fridge{
+    background: #cfe9ff;
+    color: #15324b;
+}
+
+.fridge-ui{
+    position: absolute;
+    inset: 58px 36px 24px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 14px;
+}
+
+
+.food-notes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.food-notes span{
+    padding: 8px 10px;
+    border: 1px solid #15324b;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    text-align: center;
+}
+
+.more-builds{
+    margin-top: 48px;
+}
+
+.more-builds-list{
+    margin-top: 14px;
+    border-top: 1px solid var(--line);
+}
+.more-builds-list button {
+    width: 100%;
+    padding: 18px 0;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr auto;
+    gap: 30px;
+    align-items: center;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+}
+.more-builds-list span{
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+.more-builds-list small{
+    color: var(--muted);
+}
+.more-builds-list button:hover span {
+    color: var(--accent);
+}

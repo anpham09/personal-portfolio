@@ -147,3 +147,17 @@ window.Portfolio = window.Portfolio || {};
 
     window.Portfolio.updateProjectCount?.();
 })();
+
+(() => {
+    document.querySelectorAll("[data-project]").forEach((item) =>{
+        if(item.tagName === "BUTTON") return;
+
+        item.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter" && event.key !== " ") return;
+
+            event.preventDefault();
+            item.click();
+        });
+    });
+    window.Portfolio.updateProjectCount?.();
+})();
