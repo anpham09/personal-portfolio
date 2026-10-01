@@ -265,8 +265,47 @@
         </div>
     </section>
 
-    
+    <div class="modal" id="project-modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
 
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" type="button" data-close-modal aria-label="Close case study">x</button>
+
+            <div class="modal-header">
+                <p class="mini-label" id="modal-kicker">CASE STUDY</p>
+                <h2 id="modal-title">Project</h2>
+                <p id="moda-summary"></p>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <p class="modal-label">THE QUESTION</p>
+                    <p id="modal-question"></p>
+                </div>
+
+                <div>
+                    <p class="modal-label">WHAT I BUILT</p>
+                    <p id="modal-build"></p>
+                </div>
+
+                <div>
+                    <p class="modal-label">OUTCOME</p>
+                    <p id="modal-outcome"></p>
+                </div>
+
+                <div>
+                    <p class="modal-label">TOOLS</p>
+                    <div class="tag-row" id="modal-tools"></div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                Add your live demo, Github repo, itch.io, or case-study link here later.
+            </div>
+        </div>
+    </div>
+
+    
 
     <script src="script.js"></script>
 </body>

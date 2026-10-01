@@ -882,3 +882,100 @@ kbd{
 .more-builds-list button:hover span {
     color: var(--accent);
 }
+
+.modal{
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+.modal.open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-backdrop{
+    position: absolute;
+    inset: 0;
+    background: rgba(6,7,9,0.7);
+    backdrop-filter: blur(8px);
+}
+
+.modal-panel{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(calc(100%-30px), 920px);
+    max-height: min(88vh, 900px);
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transform: translate(-50%, calc(-50% + 18px));
+    transition: transform 0.25s ease;
+}
+
+.modal.open .modal-panel{
+    transform: translate(-50%, -50%);
+}
+
+.modal-close{
+    position: sticky;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    float: right;
+    width: 42px;
+    height: 42px;
+    margin: 16px 16px -58px 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.modal-header{
+    padding: 54px 54px 34px;
+    border-bottom: 1px solid var(--line);
+}
+.modal-header h2{
+    margin: 10px 0 8px;
+    font-size: clamp(2.5rem, 6vw, 5.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+}
+.modal-header > p:last-child{
+    max-width: 62ch;
+    color: var(--muted);
+}
+
+.modal-body{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.modal-body > div{
+    min-height: 190px;
+    padding: 30px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.modal-body > div:nth-child(even){
+    border-right: 0;
+}
+.modal-body p:not(.modal-label){
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.modal-footer{
+    padding: 24px 30px 30px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}

@@ -161,3 +161,73 @@ window.Portfolio = window.Portfolio || {};
     });
     window.Portfolio.updateProjectCount?.();
 })();
+
+(()=>{
+    const projectData = {
+        genmatrix: {
+            kicker: "RESPONSIBLE AI x CYBERSAFETY",
+            title: "GenMatrix",
+            summary: "A multi-level 2D platformer designed to help younger players explore responsible AI use and online safety through interactive gameplay.",
+            question: "How can a cybersecurity and AI lesson feel like a game first, instead of a worksheet wearing a game costume?",
+            build: "I served as lead programmer, developing gameplay system across multiple levels in Godot and coordinating technical development with the project's desinger.",
+            outcome: "The project earned 1st Place in Game Design at the 2026 Fulton County Student Technology Competition, 3rd Place at the Georgia Student Technology Competition, and was presented at the MIT Global AI in Education Summit.",
+            tools: ["Godot", "GDScript", "Game Design", "Cyber Education"]
+        },
+        cybergame: {
+            kicker: "SECURITY FOR NON-TECHNICAL USERS",
+            title: "3D Cybersecurity Awareness Game",
+            summary: "An interactive senior directed-study project focused on everyday cybersecurity risks for people without technical backgrounds.",
+            question: "Can realistic choices - not just warning text - help people recognize risky situations before they happen in real life?",
+            build: "I am designing scenarios around suspicious USB devices, QR-code phishing, tailgating, fake IT calls, personal-data collection, and physical security while learning Godot 3D, scene architecture, dialogue systems, and collision-based interaction.",
+            outcome: "The project is ongoing and functions as both an educational game and a structured way for me to deepen my 3D development and human-centered cybersecurity skills.",
+            tools: ["Godot 3D", "GDScript", "Dialogue Systems", "Security Awareness"]
+        },
+        finportly: {
+            kicker: "FINANCIAL LITERACY x WEB",
+            title: "Finportly",
+            summary: "A tool designed to turn user-provided financial information into clearer personal financial reports.",
+            question: "How can budgeting and financial-health information feels less intimidating for students and beginning users?",
+            build: "I designed the reporting experience around simple inputs, understandable outputs, and a lightweight interface rather than financial jargon.",
+            outcome: "Finportly become an experiment in translating financial concepts into a more approachable digital tool.",
+            tools: ["Web Development", "Financial Literacy", "UI/UX"]
+        },
+        fridgelet: {
+            kicker: "WEB INTERACTION x STORYTELLING",
+            title: "Fridgelet",
+            summary: "An interactive digital refrigerator where users open the frige, explore dishes, and listen to recipe readings.",
+            question: "How can a familiar object - a refrigerator - become the interface for a playful web experience?",
+            build: "I combined JavaScript interaction, illustration, interface design, and audio so the experience feels more like exploring an object than reading a standard recipe page.",
+            outcome: "The result pushed me to think beyond pages and buttons and treat the browser as a space for playful interaction.",
+            tools: ["JavaScript", "HTML/CSS", "Illustration", "Audio"]
+        },
+        truthlens: {
+            kicker: "HACKATHON BUILD",
+            title: "TruthLens",
+            summary: "A collaborative technology project built during the 2026 GreenCode Hakathon under a limited build window.",
+            question: "What can a team realistically design, build, debug, and explain when the clock is part of the problem?",
+            build: "I contributed to development, problem solving, team collaboration, and presentation while adapting quickly to a short hackathon timeline.",
+            outcome: "The project received GreenCode's best Newcomer Award.",
+            tools: ["Hackathon", "Rapid Prototyping", "Team Development"]
+        },
+        biopay: {
+            kicker: "BIOMETRICS x FINTECH",
+            title: "BioPay",
+            summary: "A biometric financial-technology prototype combining fingerprint hardware, embedded systems, and Python-based similarity search.",
+            question: "What would it look like to connect a physical biometric signal to a simple payment while thinking carefully about matching and system flow?",
+            build: "Our team combined an ESP32-based fingerprint workflow with Python and FAISS-based similarity-search concepts, then developed the project into a competition pitch.",
+            outcome: "BioPay advanced as a finalist team in the Fiserv high school fintech competition.",
+            tools: ["Python", "ESP32", "FAISS", "Fintech"]
+        },
+        birthday: {
+            kicker: "LANGUAGE x INTERACTION",
+            title: "Multilingual Birthday Wheel",
+            summary: "A personalized spinning-wheel website with birthday messages and audio in multiple language.",
+            question: "How can I turn a simple birthday message into something more personal, playful, and connected to language?",
+            build: "I combined JavaScript interactions, a spinning-wheel interface, multilingual writing, and recorded audio into one personalized web gift.",
+            outcome: "It became one of my favorite examples of code being useful simply because it can make someone smile.",
+            tools: ["JavaScript", "Web Audio", "Multilingual Design"]
+
+        }
+    };
+    //here
+})();
