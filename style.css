@@ -642,22 +642,61 @@ kbd{
     padding: 22px;
     overflow: hidden;
 }
+
+.project-thumbnail{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    border: 0;
+    transition: transform 0.4s ease;
+}
+.project-card:hover .project-thumbnail{
+    transform: scale(1.025);
+}
 .project-card-large .project-art{
     min-height: 470px;
+}
+
+#genmatrix-cover{
+    min-height: 0;
+    aspect-ratio: 2.5/1;
+}
+#genmatrix-cover .project-thumbnail{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 12%;
+
+    transform: translateX(-1.2%);
 }
 
 .art-kicker{
     position: relative;
     z-index: 2;
+    display: inline-block;
+    width: fit-content;
     font-family: var(--font-mono);
     font-size: 0.62rem;
-    letter-spacing: 0.08em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.916);
+    background-color: rgba(10, 10, 14, 0.68);
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .art-number{
     position: absolute;
     right: 20px;
-    bottom: -32px;
+    bottom: -2px;
     font-size: 7.5re,;
     font-weight: 800;
     letter-spacing: -0.08em;
@@ -859,7 +898,7 @@ kbd{
     margin-top: 14px;
     border-top: 1px solid var(--line);
 }
-.more-builds-list button {
+.more-builds-list a {
     width: 100%;
     padding: 18px 0;
     display: grid;
@@ -879,7 +918,7 @@ kbd{
 .more-builds-list small{
     color: var(--muted);
 }
-.more-builds-list button:hover span {
+.more-builds-list a:hover span {
     color: var(--accent);
 }
 
