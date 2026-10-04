@@ -258,3 +258,47 @@ window.Portfolio = window.Portfolio || {};
         modal.classList.add
     }
 })();
+
+const copyButton = document.querySelector(".copy-email");
+const toast = document.querySelector(".toast");
+
+copyButton?.addEventListener("click", async()=>{
+    const email = copyButton.dataset.email || "anpham.0992@gmail.com";
+
+    try{
+        await navigator.clipboard.writeText(email);
+        if(toast){
+            toast.textContent = "Email copied";
+            toast.classList.add("show");
+
+            setTimeout(() =>{
+                toast.classList.remove("show");
+            }, 1800);
+        }
+    } catch {
+        if (toast){
+            toast.textContent = email;
+            toast.classList.add("show");
+
+            setTimeout(()=>{
+                toast.classList.remove("show");
+            }, 1800);
+        }
+    }
+});
+
+const revealElements = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {threshold: 0.12}
+);
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+})
