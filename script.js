@@ -230,4 +230,31 @@ window.Portfolio = window.Portfolio || {};
         }
     };
     //here
+    const modal = document.querySelector("#project-modal");
+    let lastFocused = null;
+
+    const openModal = (key) => {
+        const project = projectData[key];
+        if (!project || !modal) return;
+
+        lastFocused = document.activeElement;
+
+        document.querySelector("#modal-kicker").textContent = project.kicker;
+        document.querySelector("#modal-title").textContent = project.title;
+        document.querySelector("#modal-summary").textContent = project.summary;
+        document.querySelector("#modal-question").textContent = project.question;
+        document.querySelector("#modal-build").textContent = project-build;
+        document.querySelector("#modal-outcome").textContent = project.outcome;
+
+        const tools = document.querySelector("#modal-tools");
+        tools.innerHTML = "";
+
+        project.tools.forEach((tool) =>{
+            const tag = document.createElement("span");
+            tag.textContent = tool;
+            tools.appendChild(tag);
+        });
+        //here
+        modal.classList.add
+    }
 })();
