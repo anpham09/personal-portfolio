@@ -259,46 +259,25 @@ window.Portfolio = window.Portfolio || {};
     }
 })();
 
+const originalText = "Copy email";
 const copyButton = document.querySelector(".copy-email");
-const toast = document.querySelector(".toast");
 
 copyButton?.addEventListener("click", async()=>{
     const email = copyButton.dataset.email || "anpham.0992@gmail.com";
 
     try{
         await navigator.clipboard.writeText(email);
-        if(toast){
-            toast.textContent = "Email copied";
-            toast.classList.add("show");
+        copyButton.textContent = "Email copied";
 
-            setTimeout(() =>{
-                toast.classList.remove("show");
-            }, 1800);
-        }
+        setTimeout(() => {
+            copyButton.textContent = originalText;
+        }, 3500);
     } catch {
-        if (toast){
-            toast.textContent = email;
-            toast.classList.add("show");
+        copyButton.textContent = "Couldn't copy";
 
-            setTimeout(()=>{
-                toast.classList.remove("show");
-            }, 1800);
-        }
+        setTimeout(()=>{
+            copyButton.textContent = originalText;
+        }, 3500);
+        
     }
 });
-
-const revealElements = document.querySelectorAll(".reveal");
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    },
-    {threshold: 0.12}
-);
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
-})

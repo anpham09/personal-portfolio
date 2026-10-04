@@ -1176,18 +1176,15 @@ kbd{
 }
 
 .contact-shell{
-    padding: clamp(34px, 6vw, 78px);
-
+    padding: clamp(14px, 6vw, 58px);
     border-radius: 32px;
-
-    background:
-        radial-gradient(
-            circle at 82% 18%,
-            rgba(201, 255, 83, 0.34),
-            transparent 15rem
-        ),
-        var(--accent);
-    color: white;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 .contact-shell .section-index{
     color: rgba(255, 255, 255, 0.65);
@@ -1202,6 +1199,10 @@ kbd{
 .contact-shell > p:not(.section-index){
     max-width: 700px;
     color: rgba(255, 255, 255, 0.78);
+}
+.copy-email {
+    min-width: 170px;
+    text-align: center;
 }
 
 .contact-shell .button-primary {
@@ -1226,10 +1227,11 @@ kbd{
     padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 34px;
     border-top: 1px solid rgba(255, 255, 255, 0.24);
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 18px;
+    
 }
 .contact-links a:hover{
     text-decoration: underline;
