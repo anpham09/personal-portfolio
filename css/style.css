@@ -1,44 +1,32 @@
-:root{
-    --bg: #f3f1ea;
-    --surface: #faf9f4;
-    --surface-2: #e9e7df;
-    --text: #14171a;
-    --muted: #656b70;
-    --line: rgba(20,23,26,0.16);
-    --line-strong: rgba(20,23,26,0.28);
+html{
+    --bg: #f7f7f2;
+    --text: #171717;
+    --muted: #6d6d6d;
+    --surface: #ffffff;
+    --surface-2: #eeeeea;
+    --line: #ddddda;
+    --line-strong: #b8b8b4;
     --accent: #5b4dff;
     --accent-2: #c9ff53;
-    --dark-card: #111317;
-    --dark-card-text: #f5f5ef;
-    --shadow: 0 28px 80px rgba(24,26,31,0.12);
-    --radius: 22px;
-    --max-width: 1240px;
-    --header-height: 76px;
-    --font-body: "Manrope", system-ui, sans-serif;
-    --font-mono: "DM Mono", ui-monospace, monospace;
+    --dark-card: #171717;
+    --dark-card-text: #ffffff;
 }
-
-[data-theme="dark"]{
+html[data-theme="dark"]{
     --bg: #0b0d10;
-    --surface: #111419;
-    --surface-2: #171b21;
-    --text: #f3f2eb;
-    --muted: #a3abb2;
-    --line: rgba(255,255,255,0.14);
-    --line-strong: rgba(255,255,255,0.28);
-    --accent: #8e83ff;
+    --text: #f3f3f3;
+    --muted: #a1a1aa;
+    --surface: #15171b;
+    --surface-2: #202228;
+    --line: #2d3036;
+    --line-strong: #50535a;
+    --accent: #8b80ff;
     --accent-2: #c9ff53;
-    --dark-card: #f0efe8;
-    --dark-card-text: #111317;
-    --shadow: 0 28px 90px rgba(0,0,0,0.38);
+    --dark-card: #111318;
+    --dark-card-text: #ffffff;
 }
 
-*,
-*::before,
-*::after{
-    box-sizing: border-box;
-}
-html{
+*{
+    font-family: sans-serif;
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-height) +24px);
 }
@@ -47,7 +35,6 @@ body{
     margin: 0 40px;
     background: radial-gradient(circle at 20% -10%, rgba(91, 77, 255,0.12), transparent 30rem), var(--bg);
     color: var(--text);
-    font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
     transition: background 0.25s ease, color 0.25s ease;
@@ -92,7 +79,7 @@ button{
     top: 0;
     z-index: 100;
     width: min(calc(100%-40px), var(--max-width));
-    height: var(--header-height);
+    height: 60px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -130,14 +117,14 @@ button{
     display: flex;
     gap: 26px;
     align-items: center;
-    font-size: 0.88rem;
+    font-size: 20px;
     font-weight: 600;
 }
 .desktop-nav a{
     color: var(--muted);
     transition: color 0.2s ease;
 }
-.desktop-nav a::hover, .desk-top-nav a.active{
+.desktop-nav a:hover, .desktop-nav a.active{
     color: var(--text);
 }
 
@@ -149,13 +136,13 @@ button{
 }
 
 .icon-button, .command-button, .menu-button {
-    height: 42px;
+    height: 52px;
     border: 1px solid var(--line);
     background: color-mix(in srgb, var(--surface) 75%, transparent);
     cursor: pointer;
 }
 .icon-button, .menu-button{
-    width: 42px;
+    width: 52px;
     border-radius: 50%;
 }
 
@@ -168,7 +155,7 @@ button{
     color: var(--muted);
     font-size: 0.82rem;
 }
-.command-button:disable{
+.command-button:disabled{
     opacity: 0.45;
     cursor: not-allowed;
 }
@@ -204,7 +191,7 @@ kbd{
 }
 
 .section{
-    width: min(calc(100% -40px), var(--max-width));
+    width: min(calc(100% - 40px), var(--max-width));
     margin: 0 auto;
     padding: 118px 0;
 }
@@ -324,22 +311,19 @@ kbd{
 .lab-window {
     overflow: hidden;
     border: 1px solid var(--line);
-    border-radius: 28px;
+    border-radius: 18px;
     background: var(--surface);
-    box-shadow: var(--shadow);
     transform: rotate(1.2deg);
 }
 
 .lab-toolbar {
-    min-height: 48px;
-    padding: 0 16px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid var(--line);
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.7rem;
 }
 
 .window-dots{
@@ -374,6 +358,15 @@ kbd{
     grid-template-columns: 1.2fr 0.8fr;
     gap: 12px;
 }
+.lab-content{
+    padding: 28px;
+}
+.lab-content h2{
+    margin: 8px 0 14px;
+    font-size: 2rem;
+    line-height: 1.05;
+}
+.lab-content
 
 .lab-card{
     position: relative;
